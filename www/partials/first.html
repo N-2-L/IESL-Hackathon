@@ -1,0 +1,61 @@
+<ion-view title="Enter New Data">
+  <ion-content>
+    <div class="list list-inset">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">First Player</span>
+        <input type="text" ng-model="input.Fplayer" placeholder="First Player">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Second Player</span>
+        <input type="text" ng-model="input.Splayer" placeholder="Second Player">
+      </label>
+
+    </div>
+
+
+
+    <div class="list list-inset">
+      <h5> Toss won by,</h5>
+
+      <label class="item item-radio">
+        <input type="radio" name="group" ng-model="playerSelect" ng-value="p1" >
+        <div class="item-content">
+          {{input.Fplayer}}
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+      <label class="item item-radio">
+        <input type="radio" name="group" ng-model="playerSelect" ng-value="p2" >
+        <div class="item-content">
+          {{input.Splayer}}
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+
+    </div>
+
+    <div class="list list-inset">
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          sets
+        </div>
+        <select>
+          <option selected ng-model="sets" ng-value="3" >3</option>
+          <option ng-model="sets" ng-value="5" >5</option>
+        </select>
+      </label>
+
+    </div>
+    <div class="list list-inset">
+
+
+      <a href="#/scores" class="button button-outline button-positive button-block"
+         role="button"> Submit</a>
+
+    </div>
+
+
+  </ion-content>
+</ion-view>
+
