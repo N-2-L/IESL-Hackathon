@@ -20,17 +20,115 @@ app.run(function($ionicPlatform) {
 });
 
 app.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/');
+  //$urlRouterProvider.otherwise('/');
 
-  $stateProvider.state('start', {
-    url: '/',
-    templateUrl: 'partials/first.html',
-    controller: 'DataEntryCtrl'
-  })
-    .state('scores', {
-      url: '/scores',
-      templateUrl: 'partials/scores.html',
-      controller:'ScoreSheetCtrl'
+  //$stateProvider.state('start', {
+  //  url: '/',
+  //  templateUrl: 'partials/home.html',
+  //  controller: 'DataEntryCtrl'
+  //})
+  //  .state('scores', {
+  //    url: '/scores',
+  //    templateUrl: 'partials/scores.html',
+  //    controller:'ScoreSheetCtrl'
+  //
+  //  })
 
+  $stateProvider
+    .state('tabs', {
+      url: "/tab",
+      abstract: true,
+      templateUrl: "partials/tabs.html"
     })
+    .state('tabs.home', {
+      url: "/home",
+      views: {
+        'home-tab': {
+          templateUrl: "partials/home.html"
+
+        }
+      }
+    })
+    .state('tabs.facts', {
+      url: "/facts",
+      views: {
+        'facts-tab': {
+          templateUrl: "partials/scores.html",
+          controller:'ScoreSheetCtrl'
+        }
+      }
+    })
+    .state('tabs.settings', {
+      url: "/settings",
+      views: {
+        'settings-tab': {
+          templateUrl: "partials/settings.html"
+        }
+      }
+    });
+
+
+  $urlRouterProvider.otherwise("/tab/home");
+
 });
+
+//
+//$stateProvider
+//  .state('tabs', {
+//    url: "/tab",
+//    abstract: true,
+//    templateUrl: "templates/tabs.html"
+//  })
+//  .state('tabs.home', {
+//    url: "/home",
+//    views: {
+//      'home-tab': {
+//        templateUrl: "templates/home.html",
+//        controller: 'HomeTabCtrl'
+//      }
+//    }
+//  })
+//  .state('tabs.facts', {
+//    url: "/facts",
+//    views: {
+//      'home-tab': {
+//        templateUrl: "templates/facts.html"
+//      }
+//    }
+//  })
+//  .state('tabs.facts2', {
+//    url: "/facts2",
+//    views: {
+//      'home-tab': {
+//        templateUrl: "templates/facts2.html"
+//      }
+//    }
+//  })
+//  .state('tabs.about', {
+//    url: "/about",
+//    views: {
+//      'about-tab': {
+//        templateUrl: "templates/about.html"
+//      }
+//    }
+//  })
+//  .state('tabs.navstack', {
+//    url: "/navstack",
+//    views: {
+//      'about-tab': {
+//        templateUrl: "templates/nav-stack.html"
+//      }
+//    }
+//  })
+//  .state('tabs.contact', {
+//    url: "/contact",
+//    views: {
+//      'contact-tab': {
+//        templateUrl: "templates/contact.html"
+//      }
+//    }
+//  });
+//
+//
+//$urlRouterProvider.otherwise("/tab/home");
+
