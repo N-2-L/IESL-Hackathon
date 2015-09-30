@@ -29,7 +29,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   //})
   //  .state('scores', {
   //    url: '/scores',
-  //    templateUrl: 'partials/scores.html',
+  //    templateUrl: 'partials/history.html',
   //    controller:'ScoreSheetCtrl'
   //
   //  })
@@ -53,7 +53,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/facts",
       views: {
         'facts-tab': {
-          templateUrl: "partials/scores.html",
+          templateUrl: "partials/history.html",
           controller:'ScoreSheetCtrl'
         }
       }
